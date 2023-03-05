@@ -5,10 +5,32 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book-Library</title>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  
+  <header>
+    <h1>LIBRARY</h1>
+  </header>
+  <div class="hide-section add-btn">
+    <button id="hide-btn"> +Add Book</button>
+  </div>
+  <div class="book-container hidden-content">
+    <div class="input">
+    <label for="author">Author:</label>
+    <input type="text" id="author" placeholder="Enter book tittle" >
+  </div>
+   <div class="input">
+    <label for="tittle"> Tittle:</label>
+    <input type="text" id="tittle" placeholder="Enter book tittle">
+  </div>
+  <div class="input">
+    <label for="pages">Pages:</label>
+    <input type="number" id="pages" placeholder="Enter number of pages">
+  </div>
+  <div class="btn">
+    <button type="button" class="btn">Add book</button>
+  </div>
+  </div>
 </body>
 </html>
