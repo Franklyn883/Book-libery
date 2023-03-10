@@ -1,58 +1,77 @@
-//cache the dom
-let hideSection = document.getElementsByClassName('hide-section')[0];
-let hiddenContent = document.getElementsByClassName('hidden-content')[0];
-console.log(hideSection)
-console.log(hiddenContent)
+'strict mode'
+//global variables
+let myLibrary =[];
 
-const hideContent = function(){
-  if(hideSection.classList.contains('hide-section')){
-    hideSection.classList.remove('hide-section');
-    hideSection.style.display ='none';
-    hiddenContent.classList.remove('hidden-content');
+//cache the dom
+const addBookBtn = document.getElementById('add-book-btn');
+const modalContainer = document.getElementById('modal-container');
+const isReadToggle = document.getElementById('is-read-toggle')
+const bookForm = document.getElementById('book-form')
+modalContainer.style.display = 'none';
+addBookBtn.addEventListener('click', ()=>{
+  modalContainer.style.display = 'block';
+})
+
+bookForm.addEventListener('submit', (event)=>{
+  event.preventDefault();
+  modalContainer.style.display ='none';
+})
+
+
+//The constructor that will get the user info and store them in myLibrary array.
+function Book(author, tittle, pages){
+ this.author = author,
+ this.tittle= tittle,
+ this.pages =pages;
+}
+Book.prototype = function isRead(){
+  if(isRead == true){
+    console.log("Read")
   }
   else{
-    hideSection.classList.add('hide-section');
-    hideSection.style.display ='block';
-    hiddenContent.classList.add('hidden-content')
+    console.log("Not read yet")
   }
-  
 }
-document.getElementById("hide-btn").addEventListener('click', hideContent)
-let myLibrary = [];
 
+const displayBook = function (){
+  const bookCard = document.getElementById('book-card');
+  bookCard.innerHTML ='';
+  // to loop through the array and create Html element for each book object.
+  myLibrary.forEach((book) =>{
+    const bookItem =document.createElement('div');
+    bookItem.classList.add('book-item');
+    const author = document.createElement('p');
+    author.textContent=`Author: ${book.author}`;
+    bookItem.appendChild(author);
 
-function Book(){
- 
+    const tittle = document.createElement('p');
+    tittle.textContent = `Tittle: ${book.tittle}`;
+    bookItem.appendChild(tittle);
+
+    const pages = document.createElement('p');
+    pages.textContent = `Pages: ${book.pages}`
+    bookItem.appendChild(pages);
+
+    bookCard.append(bookItem);
+  })
+
 }
 
  
 const addBookToLibrary = function(){
-  let inputValues = [];
-  const inputElements = document.querySelectorAll('input');
-  
-  inputElements.forEach(function(element){
-    inputValues.push(element.value)
-  })
-  console.log(inputValues);
-  hideContent();
+  const authorValue = document.getElementById('author').value;
+const tittleValue = document.getElementById('tittle').value;
+const pagesValue = document.getElementById('pages').value;
 
-  return inputValues;
+   let newBook = new Book(authorValue,tittleValue,pagesValue);
+
+   myLibrary.push(newBook);
+   console.log(myLibrary[0]);
+   displayBook();
+ 
+   return myLibrary;
+
 }
 
-document.querySelector('.btn').addEventListener('click', addBookToLibrary,);
+document.querySelector('#btn').addEventListener('click', addBookToLibrary);
 
-
-/*
-function Book(title,author,pages, isRead){
-  this.title = title,
-  this.author = author,
-  this.pages = pages,
-  this.isRead = isRead,
-
-  this.info = function (){
-    return `${title} by ${author} ${pages} pages ${isRead ? 'read already' : 'not ready yet'}` 
-  } 
-};
-const theHobbit = new Book("Hobbit", "Rihana-joans", 55, false);
-console.log(theHobbit);
-console.log(theHobbit.info())*/
