@@ -6,22 +6,25 @@
 
 
 body{
-font-family: 'Poor Story', cursive;
-font-family: 'Roboto Mono', monospace;
-background-color: aliceblue;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poor Story', cursive;
+  font-family: 'Roboto Mono', monospace;
+background-color: #ffffff;
 display: flex;
 flex-direction: column;
+color: #0b1a2f;
 }
 header{
-  background-color: white;
+  font-family: Georgia,Arial, Helvetica, sans-serif;
+  background-color: rgb(11, 26, 47);
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
-  padding:16px
+  padding:16px;
+  color:#ffffff;
 }
 
 .input{
   display:block;
-  padding: 16px;
-  
+  padding: 12px;
 }
 input{
   height: 36px;
@@ -39,33 +42,41 @@ input{
   justify-content: center;
   align-self: center;
   align-items: center;
-  background-color: white;
-  padding: 32px;
+  background-color:rgb(11, 26, 47);
+  padding: 18px 32px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), -2px -2px 4px rgba(255, 255, 255, 0.3);
   border-radius: 16px;
   font-size: 16px;
+  color:#ffffff;
 }
 #book-form{
   display:flex;
   flex-direction: column;
 }
-#btn{
-  padding: 12px;
-  border: none;
-  background-color: yellow;
+#submit-btn{
+  padding-bottom: 1em;
+  background-color: #6184D8;
   border: 2px solid black;
-  width:18em;
+  width:12em;
   align-self: center;
   text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
 }
+#submit-btn:hover,
+#submit-btn:active{
+background-color:  rgba(29, 50, 99, 0.719);
+}
+
+
 
 input[type="checkbox"]{
   height:20px;
   width:20px;
   margin-left: 4px;
-  background-color: #6184D8;
- 
-  
+  background-color: #6184D8;  
 }
 
 #is-read-toggle{
@@ -95,12 +106,16 @@ input[type="checkbox"]{
   padding: 12px;
   background-color: aliceblue;
   font-weight: bold ;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #6184D8;
+  border-radius: 16px;
+  box-shadow: 2px 2px 4px rgba(11, 26, 47, 0.3), -2px -2px 4px rgba(255, 255, 255, 0.3)
 }
 .add-btn > button:hover,
 .add-btn > button:active{
-  padding: 12px;
-  border-radius: 12px;
-  background-color:whitesmoke;
-  border:2px solid  rgba(0, 0, 0, 0.144);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), -2px -2px 4px rgba(255, 255, 255, 0.3)
+
+  background-color:  rgba(29, 50, 99, 0.719);
+  
+  
 };
