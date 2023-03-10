@@ -24,18 +24,11 @@ function Book(author, tittle, pages){
  this.tittle= tittle,
  this.pages =pages;
 }
-Book.prototype = function isRead(){
-  if(isRead == true){
-    console.log("Read")
-  }
-  else{
-    console.log("Not read yet")
-  }
-}
+
 
 const displayBook = function (){
-  const bookCard = document.getElementById('book-card');
-  bookCard.innerHTML ='';
+  const bookContainer = document.getElementById('book-container');
+  bookContainer.innerHTML ='';
   // to loop through the array and create Html element for each book object.
   myLibrary.forEach((book) =>{
     const bookItem =document.createElement('div');
@@ -52,7 +45,8 @@ const displayBook = function (){
     pages.textContent = `Pages: ${book.pages}`
     bookItem.appendChild(pages);
 
-    bookCard.append(bookItem);
+    bookContainer.append(bookItem);
+   
   })
 
 }
@@ -73,5 +67,5 @@ const pagesValue = document.getElementById('pages').value;
 
 }
 
-document.querySelector('#btn').addEventListener('click', addBookToLibrary);
+document.querySelector('#submit-btn').addEventListener('click', addBookToLibrary);
 
