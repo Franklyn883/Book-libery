@@ -66,7 +66,7 @@ input{
   border-radius: 16px;
   font-size: 18px;
   color:#ffffff;
-  
+  border-left: 8px solid #808000; 
 }
 .book-item p{
   padding: 12px;
@@ -83,7 +83,7 @@ input{
 }
 #submit-btn{
   padding-bottom: 1em;
-  background-color: #6184D8;
+  background-color: #808000;
   border: 2px solid black;
   width:12em;
   align-self: center;
@@ -95,16 +95,16 @@ input{
 }
 #submit-btn:hover,
 #submit-btn:active{
-background-color:  rgba(29, 50, 99, 0.719);
+background-color:  rgba(128, 128, 0, 0.658);
 }
 
 
 
-input[type="checkbox"]{
+input[type="checkbox"] {
   height:20px;
   width:20px;
   margin-left: 4px;
-  background-color: #6184D8;  
+  background-color: #808000;  
 }
 
 #is-read-toggle{
@@ -136,14 +136,14 @@ input[type="checkbox"]{
   font-weight: bold ;
   cursor: pointer;
   color: #ffffff;
-  background-color: #6184D8;
+  background-color: #808000;
   border-radius: 16px;
   box-shadow: 2px 2px 4px rgba(11, 26, 47, 0.3), -2px -2px 4px rgba(255, 255, 255, 0.3)
 }
 .add-btn > button:hover,
 .add-btn > button:active{
 
-  background-color:  rgba(29, 50, 99, 0.719);
+  background-color:   rgba(128, 128, 0, 0.658);
   
   
 };
