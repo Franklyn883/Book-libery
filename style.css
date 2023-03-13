@@ -38,7 +38,7 @@ input{
 #modal-container{
 
   margin-top:24px;
-  width: 30vw;
+  min-width: 30vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,7 +68,7 @@ input{
 
 .book-item{
  margin: 16px;
-  width: 20vw;
+  min-width: 20vw;
   display: flex;
   flex-direction: column;
   justify-content:flex-start;

@@ -21,20 +21,27 @@ const Book = function(author, tittle, pages){
   this.author = author,
   this.tittle= tittle,
   this.pages = pages;
+  this.read = this.false;
   
  };
+ 
   addBookBtn.addEventListener('click', ()=>{
     modalContainer.style.display = 'block';
     addBookBtn.style.visibility ='hidden';
-   
+   Book.prototype.displayConsole = () =>{
+    console.log('this is a bookprototype')
+   }
    
   });
+const ResetUserInput = function(){
+  document.getElementById('author').value = '';
+  document.getElementById('tittle').value = '';
+  document.getElementById('pages').value = '';
+}
 
 const displayBook = function (){
  const bookContainer = document.getElementById('book-container');
   bookContainer.innerHTML ='';
-  
- 
   ;
   // to loop through the array and create Html element for each book object.
   myLibrary.forEach((book) =>{
@@ -43,6 +50,7 @@ const displayBook = function (){
     const bookContainerHeader = document.createElement('h3');
     bookContainerHeader.classList.add('book-container-header');
     bookContainerHeader.textContent ="Book";
+    
     bookItem.appendChild(bookContainerHeader);
 
 
@@ -58,32 +66,59 @@ const displayBook = function (){
     const pages = document.createElement('p');
     pages.textContent = `Pages: ${book.pages}`
     bookItem.appendChild(pages);
+   
 
     bookContainer.append(bookItem)
     });
+    
 }
 
  
 const addBookToLibrary = function(){
+ 
   bookForm.addEventListener('submit', (event) => event.preventDefault())
   const authorValue = document.getElementById('author').value;
 const tittleValue = document.getElementById('tittle').value;
 const pagesValue = document.getElementById('pages').value;
 
 
+
   let newBook = new Book(authorValue,tittleValue,pagesValue);
-   myLibrary.push(newBook);
-   console.log(myLibrary[0]);
+  
+    function validateInput(){
+    if (authorValue.trim() !==''){
+      myLibrary.push(newBook);
+    }
+    else if (tittleValue.trim() !==""){
+      myLibrary.push(newBook);
+    }
+    else if (pagesValue.trim() !== ""){
+      myLibrary.push(newBook)
+    }
+    else{
+      if(authorValue == ''){
+        errorMssg
+      }
+      else if(tittleValue == ''){
+        errorMssg
+      }
+      else if(pagesValue == "" ){
+        errorMssg
+      }
+    }
+    
+  }
+ 
+ newBook.displayConsole();
+  
    
-   
+   validateInput();
    displayBook();
    
   addBookBtn.style.visibility = 'visible';
-  document.getElementById('author').value = '';
-  document.getElementById('tittle').value = '';
-  document.getElementById('pages').value = '';
+ ResetUserInput();  
   modalContainer.style.display ='none'
-   return myLibrary;
+   return myLibrary, newBook;
 
 }
 
