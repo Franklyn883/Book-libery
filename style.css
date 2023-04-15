@@ -45,9 +45,14 @@ input{
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
 }
+@media (max-width: 767px) {
+  #modal-container{
+    width: 80%;
+  }
+}
 #modal-container{
-  margin-top:15%px auto;
-  min-width: 30vw;
+  margin-top:15% auto;
+  min-width: 35vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
