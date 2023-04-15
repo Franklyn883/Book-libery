@@ -163,7 +163,7 @@ const addBookToLibrary = function () {
       modalContainer.style.display = "none";
     }
   }
-  newBook.displayConsole();
+
   validateInput();
 };
 
