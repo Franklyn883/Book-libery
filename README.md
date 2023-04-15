@@ -1,1 +1,2 @@
 # Book-libery
+The book app is a project developed as part of my Odin exercise. It allows users to add and display books with details like title, author, and pages. The app includes functionality to mark books as "read" or "not read" using checkboxes.The app also includes a remove button for removing books from the library.

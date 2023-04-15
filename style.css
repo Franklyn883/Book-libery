@@ -4,8 +4,11 @@
   box-sizing: border-box;
 }
 
-
+html{
+  height: 100%;
+}
 body{
+  height: 100%;
   font-family: 'Open Sans', sans-serif;
   font-family: 'Poor Story', cursive;
   font-family: 'Roboto Mono', monospace;
@@ -120,7 +123,7 @@ input{
   grid-template-columns:repeat(auto-fill, minmax(350px,1fr));
   gap:0.5rem;
   padding: 0 2rem;
-
+  flex: 1 
   ;}
 
 #book-form{
@@ -216,3 +219,17 @@ input[type="checkbox"] {
   
   
 };
+footer{
+
+  margin: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+footer p{
+  display: flex;
+  align-items: center;
+  padding: 16px;
+ justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}

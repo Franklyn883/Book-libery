@@ -9,7 +9,7 @@ let readStatus = document.getElementById("read-status");
 const bookForm = document.getElementById("book-form");
 modalContainer.style.display = "none";
 const overlay = document.getElementsByClassName('overlay')[0];
-const body = document.querySelector('body');
+
 
 //The constructor that will get the user info and store them in myLibrary array.
 
